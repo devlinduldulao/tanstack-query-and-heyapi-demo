@@ -12,7 +12,13 @@ export default defineConfig({
       routeTreeFileHeader: ["/* eslint-disable eslint-comments/no-unlimited-disable */", "/* eslint-disable */"],
       generatedRouteTree: "./src/route-tree.gen.ts",
     }),
-    react(),
+    react(
+      {
+        babel: {
+          plugins: [["babel-plugin-react-compiler"]],
+        },
+      }
+    ),
     tailwindcss(),
   ],
   resolve: {
