@@ -2,6 +2,8 @@ import type { QueryClient } from "@tanstack/react-query";
 import { MainNav } from "@/components/main-nav";
 
 import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 
 type RouterContextType = {
   queryClient: QueryClient;
@@ -23,6 +25,8 @@ function RootComponent() {
       <div className="flex-1 space-y-4 p-8 pt-6">
         <Outlet />
       </div>
+      <ReactQueryDevtools initialIsOpen={false} />
+      <TanStackRouterDevtools />
     </div>
   );
 }
