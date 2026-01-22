@@ -1,17 +1,10 @@
-import { Skeleton } from '@/components/ui/skeleton'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
+import { Skeleton } from "@/components/ui/skeleton";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export function AuthorsListSkeleton() {
   return (
     <div className="container mx-auto py-8">
-      <div className="flex items-center justify-between mb-6">
+      <div className="mb-6 flex items-center justify-between">
         <Skeleton className="h-9 w-28" />
       </div>
       <div className="rounded-md border">
@@ -41,7 +34,7 @@ export function AuthorsListSkeleton() {
                   <Skeleton className="h-4 w-8" />
                 </TableCell>
                 <TableCell className="text-right">
-                  <Skeleton className="h-8 w-8 ml-auto" />
+                  <Skeleton className="ml-auto h-8 w-8" />
                 </TableCell>
               </TableRow>
             ))}
@@ -49,5 +42,5 @@ export function AuthorsListSkeleton() {
         </Table>
       </div>
     </div>
-  )
+  );
 }

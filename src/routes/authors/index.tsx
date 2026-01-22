@@ -1,32 +1,25 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { useSuspenseQuery } from '@tanstack/react-query'
-import { getApiV1AuthorsOptions } from '../../api/client/@tanstack/react-query.gen'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '../../components/ui/table'
-import { Button } from '../../components/ui/button'
-import { EyeIcon } from 'lucide-react'
-import { AuthorsListSkeleton } from './-skeletons/authors-list-skeleton'
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useSuspenseQuery } from "@tanstack/react-query";
+import { getApiV1AuthorsOptions } from "../../api/client/@tanstack/react-query.gen";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../../components/ui/table";
+import { Button } from "../../components/ui/button";
+import { EyeIcon } from "lucide-react";
+import { AuthorsListSkeleton } from "./-skeletons/authors-list-skeleton";
 
-export const Route = createFileRoute('/authors/')({
+export const Route = createFileRoute("/authors/")({
   component: RouteComponent,
   pendingComponent: AuthorsListSkeleton,
   loader: ({ context }) => {
-    void context.queryClient.ensureQueryData(getApiV1AuthorsOptions())
+    void context.queryClient.ensureQueryData(getApiV1AuthorsOptions());
   },
-})
+});
 
 function RouteComponent() {
-  const { data: authors } = useSuspenseQuery(getApiV1AuthorsOptions())
+  const { data: authors } = useSuspenseQuery(getApiV1AuthorsOptions());
 
   return (
     <div className="container mx-auto py-8">
-      <div className="flex items-center justify-between mb-6">
+      <div className="mb-6 flex items-center justify-between">
         <h1 className="text-3xl font-bold">Authors</h1>
       </div>
       <div className="rounded-md border">
@@ -69,5 +62,5 @@ function RouteComponent() {
         </Table>
       </div>
     </div>
-  )
+  );
 }

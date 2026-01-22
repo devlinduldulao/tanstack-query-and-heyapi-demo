@@ -2,8 +2,8 @@ import type { QueryClient } from "@tanstack/react-query";
 import { MainNav } from "@/components/main-nav";
 
 import { createRootRouteWithContext, Outlet } from "@tanstack/react-router";
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
 type RouterContextType = {
   queryClient: QueryClient;
@@ -18,7 +18,7 @@ function RootComponent() {
   return (
     <div className="flex min-h-screen flex-col">
       <div className="border-b">
-        <div className="flex h-16 items-center px-4 container mx-auto">
+        <div className="container mx-auto flex h-16 items-center px-4">
           <MainNav className="mx-6" />
         </div>
       </div>
