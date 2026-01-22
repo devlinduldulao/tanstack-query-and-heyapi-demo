@@ -1,9 +1,74 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
+import { useSuspenseQuery } from '@tanstack/react-query'
+import { getApiV1AuthorsByIdOptions } from '../../../api/client/@tanstack/react-query.gen'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '../../../components/ui/card'
+import { Button } from '../../../components/ui/button'
+import { ChevronLeft } from 'lucide-react'
+import { AuthorDetailSkeleton } from './-skeletons/author-detail-skeleton'
 
 export const Route = createFileRoute('/authors/$id/')({
   component: RouteComponent,
+  pendingComponent: AuthorDetailSkeleton,
+  loader: ({ context, params }) => {
+    void context.queryClient.ensureQueryData(
+      getApiV1AuthorsByIdOptions({
+        path: { id: parseInt(params.id) },
+      }),
+    )
+  },
 })
 
 function RouteComponent() {
-  return <div>Hello "/authors/$id/"!</div>
+  const { id } = Route.useParams()
+  const { data: author } = useSuspenseQuery(
+    getApiV1AuthorsByIdOptions({
+      path: { id: parseInt(id) },
+    }),
+  )
+
+  return (
+    <div className="container mx-auto py-8">
+      <Button variant="ghost" className="mb-6">
+        <Link to="/authors">
+          <ChevronLeft className="mr-2 h-4 w-4" />
+          Back to Authors
+        </Link>
+      </Button>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Author Details</CardTitle>
+          <CardDescription>ID: {author.id}</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <h3 className="text-sm font-medium text-muted-foreground">
+                First Name
+              </h3>
+              <p className="text-lg">{author.firstName}</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-medium text-muted-foreground">
+                Last Name
+              </h3>
+              <p className="text-lg">{author.lastName}</p>
+            </div>
+            <div>
+              <h3 className="text-sm font-medium text-muted-foreground">
+                Book ID
+              </h3>
+              <p className="text-lg">{author.idBook}</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  )
 }

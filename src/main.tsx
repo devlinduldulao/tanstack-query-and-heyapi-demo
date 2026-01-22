@@ -4,6 +4,11 @@ import { createRouter, RouterProvider } from "@tanstack/react-router";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { routeTree } from "./route-tree.gen";
+import { client } from "./api/client/client.gen";
+
+client.setConfig({
+  baseURL: "https://fakerestapi.azurewebsites.net",
+});
 
 const queryClient = new QueryClient({
   defaultOptions: {
