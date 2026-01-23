@@ -1,8 +1,1 @@
-I made a page for the books #file:index.tsx  and detailed book page #file:index.tsx . I want you to build me the UI for these using these screenshots. Just use local state for now using useState. I will deal with the real rest api requests later. Attached here are the screenshots of the UI that we want.
-
-########################
-
-Great. Now let's migrate the books pages to real data. use loader: ({ context }) => {
-void context.queryClient.ensureQueryData();
-}, in the route and useSuspenseQuery()); in the component using heyapi generated code getApiV1BooksOptions and getApiV1BooksByIdOptions. And then don't forget to add the skeletons for them through the pendingComponent.
-
+I made a page for the books and detailed book pag . I want you to build me the UI for these using these screenshot wireframes.
