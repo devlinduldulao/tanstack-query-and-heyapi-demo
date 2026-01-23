@@ -1,4 +1,4 @@
-I made a page for the books #file:index.tsx  and detailed book page #file:index.tsx . I want you to build me the UI for these using these screenshots. Just use local state for now using useState. I will deal with the real rest api requests later. Attached here are the screenshots.
+I made a page for the books #file:index.tsx  and detailed book page #file:index.tsx . I want you to build me the UI for these using these screenshots. Just use local state for now using useState. I will deal with the real rest api requests later. Attached here are the screenshots of the UI that we want.
 
 ########################
 
