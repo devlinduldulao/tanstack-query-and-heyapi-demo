@@ -17,7 +17,7 @@ export function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElemen
       >
         {({ isActive }) => (
           <>
-            React Miami 26
+            React Miami 2026
             {isActive && (
               <motion.div
                 layoutId="nav-indicator"
