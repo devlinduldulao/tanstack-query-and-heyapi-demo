@@ -28,7 +28,7 @@ export const Route = createFileRoute("/path/to/route")({
   // Loader for data fetching (use void to prefetch without awaiting)
   loader: ({ context, params, search }) => {
     void context.queryClient.ensureQueryData(myDataOptions({ path: { id: params.id } }));
-    
+
     // Optional: return data for breadcrumbs or other route context
     return {
       crumb: "route-name",
@@ -92,7 +92,7 @@ loader: ({ context: { queryClient }, params }) => {
   void queryClient.ensureQueryData(applicationGetOptions({ path: params }));
   void queryClient.ensureQueryData(getEnvironmentsOptions({ path: params }));
   void queryClient.ensureQueryData(servicesGetOptions({ path: params }));
-  
+
   return {
     crumb: "route-name",
   };
@@ -222,16 +222,17 @@ function RouteComponent() {
 
 // ✅ Use route-specific skeleton component
 export const Route = createFileRoute("/app/$applicationId/settings/network")({
-  loader: ({ context, params }) => {
-    void context.queryClient.ensureQueryData(
-      applicationSettingsOptions({ path: { applicationId: params.applicationId } }),
-    );
-  },
-  pendingComponent: NetworkSkeleton, // Route-specific skeleton
-  pendingComponent: () => <LoadingSkeleton />,
-  component: RouteComponent,
+loader: ({ context, params }) => {
+void context.queryClient.ensureQueryData(
+applicationSettingsOptions({ path: { applicationId: params.applicationId } }),
+);
+},
+pendingComponent: NetworkSkeleton, // Route-specific skeleton
+pendingComponent: () => <LoadingSkeleton />,
+component: RouteComponent,
 });
-```
+
+````
 
 ## Error Handling
 
@@ -245,7 +246,7 @@ export const Route = createFileRoute("/app/$applicationId/")({
   component: RouteComponent,
   errorComponent: ({ error }) => <SmartRouteError error={error} resourceName="application" />,
 });
-```
+````
 
 ### Error Boundaries
 
@@ -302,7 +303,7 @@ export const Route = createFileRoute("/my-route")({
 
 ### 1. Always Use Type-Safe Navigation
 
-```tsx
+````tsx
 // ✅ Good - Type-safe
 <Link to="/app/$applicationId" params={{ applicationId: id }}>
 
@@ -322,7 +323,7 @@ loader: (({ context, params }) => context.queryClient.ensureQueryData(dataOption
   function Component() {
     const { data } = useQuery(dataOptions());
   });
-```
+````
 
 ### 3. Use Suspense Boundaries
 

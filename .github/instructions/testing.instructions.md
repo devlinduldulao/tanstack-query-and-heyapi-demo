@@ -379,7 +379,7 @@ it("creates application successfully", async () => {
 it("loads route data correctly", async () => {
   // Mock API response
   vi.mocked(apiClient.applicationGet).mockResolvedValue({ id: "123", name: "My App" });
-  
+
   const router = createTestRouter([Route], ["/app/123"]);
 
   renderWithProviders(<RouterProvider router={router} />);

@@ -57,7 +57,7 @@ Use the `void` pattern to prefetch data in route loaders without awaiting. This 
 loader: ({ context, params }) => {
   // Use void to prefetch without blocking
   void context.queryClient.ensureQueryData(applicationGetOptions({ path: params }));
-  
+
   // Optionally return data for route context (like breadcrumbs)
   return {
     crumb: "application",
