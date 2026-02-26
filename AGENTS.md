@@ -64,6 +64,28 @@ src/
 - **Constants**: `UPPER_SNAKE_CASE`
 - **Icons**: Use standard Lucide names (e.g., `Moon`, `Check`)
 
+### TypeScript Types
+
+- Use `type` aliases instead of `interface` declarations.
+- This project standard is: **types only** for object shapes, unions, and composition.
+- Prefer:
+
+```ts
+type User = {
+  id: string;
+  name: string;
+};
+```
+
+- Avoid:
+
+```ts
+interface User {
+  id: string;
+  name: string;
+}
+```
+
 ### Imports
 
 ```typescript
