@@ -1,4 +1,4 @@
-# HEy API
+# Hey API
 
 ## Plugins
 
