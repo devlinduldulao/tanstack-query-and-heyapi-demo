@@ -47,9 +47,7 @@
 
 ### Validators
 
-`There are times when you cannot blindly trust the server to return the correct data. You might be working on a critical application where any mistakes would be costly, or you're simply dealing with a legacy or undocumented system.
-
-Whatever your reason to use validators might be, you can rest assured that you're working with the correct data.`
+`There are times when you cannot blindly trust the server to return the correct data. You might be working on a critical application where any mistakes would be costly, or you're simply dealing with a legacy or undocumented system. Whatever your reason to use validators might be, you can rest assured that you're working with the correct data.`
 
 - Valibot
 - Zod
