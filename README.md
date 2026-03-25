@@ -87,11 +87,11 @@ Whatever your reason to use validators might be, you can rest assured that you'r
 - Fastify
 - Nest
 - oRPC
-- Adonis Soon
-- Elysia Soon
-- Express Soon
-- Hono Soon
-- Koa Soon
+- Adonis (soon)
+- Elysia (soon)
+- Express (soon)
+- Hono (soon)
+- Koa (soon)
 
 ### Resolvers
 
