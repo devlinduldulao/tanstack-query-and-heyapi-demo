@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsgo --noEmit",
-    "openapi-ts": "openapi-ts",
+    "openapi-ts": "orval",
     "update-swagger-pwsh": "Invoke-WebRequest -Uri \"https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json\" -OutFile \"swagger.json\"",
     "update-swagger-bash": "curl -o swagger.json \"https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json\""
   },
@@ -63,6 +63,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.5.0",
+    "orval": "^8.7.0",
     "oxfmt": "^0.45.0",
     "oxlint": "^1.60.0",
     "prettier": "^3.8.2",
