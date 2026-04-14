@@ -16,14 +16,7 @@ export default defineConfig({
       },
       client: "react-query",
       httpClient: "axios",
-      mode: "split",
       formatter: "oxfmt",
-      override: {
-        query: {
-          version: 5,
-          useSuspenseQuery: true,
-        },
-      },
     },
     hooks: {
       afterAllFilesWrite: "oxlint --fix",
