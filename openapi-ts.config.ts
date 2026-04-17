@@ -1,7 +1,7 @@
 import { defaultPlugins, defineConfig } from "@hey-api/openapi-ts";
 
 export default defineConfig({
-  input: "./swagger.json",
+  input: "./swagger.yaml",
   output: { postProcess: ["oxlint", "oxfmt"], path: "src/api/client" },
   plugins: [...defaultPlugins, "@hey-api/client-axios", "@tanstack/react-query", "zod"],
 });
