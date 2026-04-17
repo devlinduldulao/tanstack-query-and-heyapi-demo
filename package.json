@@ -9,8 +9,8 @@
     "preview": "vite preview",
     "typecheck": "tsgo --noEmit",
     "openapi-ts": "openapi-ts",
-    "update-swagger-pwsh": "Invoke-WebRequest -Uri \"https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json\" -OutFile \"swagger.json\"",
-    "update-swagger-bash": "curl -o swagger.json \"https://fakerestapi.azurewebsites.net/swagger/v1/swagger.json\""
+    "update-swagger-pwsh": "Invoke-WebRequest -Uri \"https://fakerestapi.azurewebsites.net/swagger/v1/swagger.yaml\" -OutFile \"swagger.yaml\"",
+    "update-swagger-bash": "curl -o swagger.yaml \"https://fakerestapi.azurewebsites.net/swagger/v1/swagger.yaml\""
   },
   "dependencies": {
     "@base-ui/react": "^1.4.0",
