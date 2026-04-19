@@ -1,7 +1,6 @@
 import "./index.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createRouter, RouterProvider } from "@tanstack/react-router";
-import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { routeTree } from "./route-tree.gen";
 import { client } from "./api/client/client.gen";
@@ -53,7 +52,6 @@ const router = createRouter({
 });
 
 declare module "@tanstack/react-router" {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface Register {
     router: typeof router; // merge your router's exact types with exported hooks, components, and utilities.
   }
@@ -74,9 +72,5 @@ function App() {
 const rootElement = document.getElementById("root")!;
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
-  root.render(
-    <StrictMode>
-      <App />
-    </StrictMode>,
-  );
+  root.render(<App />);
 }
