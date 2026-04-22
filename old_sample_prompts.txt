@@ -14,7 +14,7 @@ void context.queryClient.ensureQueryData();
 
 2.)  Then migrate the books pages to real data. use loader: ({ context }) => {
 void context.queryClient.ensureQueryData();
-}, in the route and useSuspenseQuery()); in the component using heyapi generated code getApiV1BooksOptions and getApiV1BooksByIdOptions. And then don't forget to add the skeletons for them through the pendingComponent.
+}, in the route and useSuspenseQuery(); in the component using heyapi generated code getApiV1BooksOptions and getApiV1BooksByIdOptions. And then don't forget to add the skeletons for them through the pendingComponent.
 
 ##### One short prompt with custom instructions below:###########
 
