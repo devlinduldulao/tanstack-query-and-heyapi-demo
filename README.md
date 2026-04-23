@@ -1016,3 +1016,60 @@ Answer:
 That is the fairest objection. If the spec is inaccurate, the generated client will also be inaccurate.
 
 But this is actually a benefit, not a weakness. It exposes the real organizational problem: the API contract is not trustworthy. Hey API forces that contract to become visible and worth fixing.
+
+### The Most Persuasive Live Demo
+
+For a conference talk, the best demo is not "look at all these generated files."
+
+The best demo is this sequence:
+
+1. Show a hand-written React Query endpoint setup.
+2. Show how many moving parts it requires.
+3. Replace it with the generated query options.
+4. Change the OpenAPI spec.
+5. Re-run `npm run openapi-ts`.
+6. Show how TypeScript immediately points to the places that need attention.
+
+That demo makes the value obvious.
+
+The audience sees:
+
+- less boilerplate
+- stronger inference
+- one source of truth
+- faster adaptation to backend changes
+
+### A Good 30-Second Pitch for the Stage
+
+You can say this almost verbatim:
+
+> React teams are great at building product experiences, but we waste a surprising amount of time hand-writing API plumbing: types, clients, query helpers, validation, and then keeping all of it in sync. Hey API lets us generate that layer from the backend contract, so our React code stays focused on UI and state while the API surface stays consistent, typed, and easy to regenerate.
+
+### A Stronger Technical Pitch for Senior Developers
+
+If the room is more advanced, say it this way:
+
+> The main benefit is not convenience. It is contract alignment. Hey API collapses several drift-prone layers into one generated system: request types, response types, transport functions, query integration, and runtime schemas. That reduces repeated code and makes backend changes visible immediately through regeneration and type errors.
+
+### The Call to Action You Want
+
+Do not ask attendees to rewrite their whole stack.
+
+Ask them to try Hey API on **one vertical slice**:
+
+1. Pick one resource, like `activities` or `books`.
+2. Generate the client.
+3. Replace one hand-written query and one mutation.
+4. Validate one form with generated Zod schemas.
+5. Judge it by developer experience, not ideology.
+
+That is a much easier sell than: "Adopt codegen everywhere."
+
+### Final Framing
+
+The message to React developers should be:
+
+> Hey API is not interesting because it generates files.
+> It is interesting because it removes API busywork, improves consistency, and fits naturally into the React + TanStack Query + TypeScript workflow teams already have.
+
+That is the framing most likely to convince people to try it.
